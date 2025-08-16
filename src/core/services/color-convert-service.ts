@@ -197,7 +197,7 @@ export class ColorConvertService {
       case 'oklch': {
         const oklch = converter('oklch')(parsed) as any;
         if (!oklch) throw new Error('Conversion to oklch failed');
-        return `oklch(${Number(oklch.l?.toFixed(2))} ${Number(oklch.c?.toFixed(2))} ${Math.round(oklch.h ?? 0)})`;
+        return `oklch(${Number(oklch.l?.toFixed(2))} ${Number(oklch.c?.toFixed(2))} ${Number((oklch.h ?? 0).toFixed(2))})`;
       }
       case 'lab': {
         const lab = converter('lab')(parsed) as any;
